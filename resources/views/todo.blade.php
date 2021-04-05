@@ -11,6 +11,9 @@
     <form action="{{url('/todolist')}}" method="POST">
         @csrf
         <input type="text" name="task" placeholder="New to do">
+        @error('task')
+            <span style="color: red">{{ $message }}</span>
+        @enderror
         <input type="submit">
     </form>
 
